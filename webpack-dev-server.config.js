@@ -1,43 +1,46 @@
-const webpack = require('webpack');
-const path = require('path');
-const TransferWebpackPlugin = require('transfer-webpack-plugin');
+const webpack = require("webpack");
+const path = require("path");
+const TransferWebpackPlugin = require("transfer-webpack-plugin");
 
 const config = {
   // Entry points to the project
   entry: {
     main: [
       // only- means to only hot reload for successful updates
-      'webpack/hot/only-dev-server',
-      './src/app/app.js',
+      "webpack/hot/only-dev-server",
+      "./src/app/index.jsx",
     ],
   },
   // Server Configuration options
   devServer: {
-    contentBase: 'src/www', // Relative directory for base of server
+    contentBase: "src/public", // Relative directory for base of server
     hot: true, // Live-reload
     inline: true,
     port: 3000, // Port Number
-    host: 'localhost', // Change to '0.0.0.0' for external facing server
+    host: "localhost", // Change to '0.0.0.0' for external facing server
   },
-  devtool: 'eval',
+  devtool: "eval",
   output: {
-    path: path.resolve(__dirname, 'build'), // Path of output file
-    filename: 'app.js',
+    path: path.resolve(__dirname, "build"), // Path of output file
+    filename: "app.js",
   },
   plugins: [
     // Enables Hot Modules Replacement
     new webpack.HotModuleReplacementPlugin(),
     // Moves files
     new TransferWebpackPlugin([
-      {from: 'www'},
-    ], path.resolve(__dirname, 'src')),
+      { from: "public" },
+    ], path.resolve(__dirname, "src")),
   ],
+  resolve: {
+    extensions: [".js", ".jsx"],
+  },
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        loader: "babel-loader",
         query: {
           cacheDirectory: true,
         },
