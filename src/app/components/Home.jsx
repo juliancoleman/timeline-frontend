@@ -10,8 +10,8 @@ const Home = () => (
   <Card style={{ maxWidth: 350, margin: "5vh auto" }}>
     <CardTitle title="Welcome" />
     <CardText>
-      To begin checking students in, tap the floating action button at the bottom right with
-      the fingerprint icon.
+      Tap the floating action button at the bottom right with
+      the fingerprint icon to begin checking students in.
     </CardText>
   </Card>
 );
