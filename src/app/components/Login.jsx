@@ -55,7 +55,7 @@ export default class Login extends React.Component {
 
   render() {
     return (
-      <Card style={{ maxWidth: 350, margin: "10vh auto" }}>
+      <Card className="responsive-card-sm">
         <CardTitle title="Login" />
         <CardText>
           <TextField

@@ -7,7 +7,7 @@ import {
 } from "material-ui";
 
 const NotFound = () => (
-  <Card style={{ maxWidth: 450, margin: "10vh auto" }}>
+  <Card className="responsive-card-sm">
     <CardTitle title="Dang it &#9785;" />
     <CardText>
       That page could not be found.

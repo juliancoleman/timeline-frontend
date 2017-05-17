@@ -8,6 +8,11 @@ import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import Main from "./components/Main";
 import Login from "./components/Login";
 import Home from "./components/Home";
+import Group from "./components/Group";
+import Groups from "./components/Groups";
+import ParentGuide from "./components/ParentGuide";
+import Help from "./components/Help";
+import About from "./components/About";
 import NotFound from "./components/NotFound";
 
 import AuthService from "../helpers/AuthService";
@@ -42,6 +47,13 @@ const App = () => (
         <Switch>
           <PrivateRoute exact path="/" component={Home} />
           <Route path="/login" component={Login} />
+          <PrivateRoute path="/groups" component={Groups} />
+          <PrivateRoute path="/group/:groupId" component={Group} />
+          <PrivateRoute path="/itineraries" component={NotFound} />
+          <PrivateRoute path="/itinerary/:itineraryId" component={NotFound} />
+          <PrivateRoute path="/parentguide" component={ParentGuide} />
+          <PrivateRoute path="/help" component={Help} />
+          <PrivateRoute path="/about" component={About} />
           <Route component={NotFound} />
         </Switch>
       </Main>

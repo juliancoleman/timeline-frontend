@@ -5,7 +5,7 @@ const TransferWebpackPlugin = require("transfer-webpack-plugin");
 const config = {
   entry: {
     main: [
-      "./src/app/index.js",
+      "./src/app/index.jsx",
     ],
   },
   // Render source-map file for final build
@@ -31,6 +31,9 @@ const config = {
       { from: "public" },
     ], path.resolve(__dirname, "src")),
   ],
+  resolve: {
+    extensions: [".js", ".jsx"],
+  },
   module: {
     rules: [
       {
