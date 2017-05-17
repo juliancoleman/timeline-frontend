@@ -1,6 +1,7 @@
 const webpack = require("webpack");
 const path = require("path");
-const TransferWebpackPlugin = require("transfer-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const Dotenv = require("dotenv-webpack");
 
 const config = {
   // Entry points to the project
@@ -13,7 +14,7 @@ const config = {
   },
   // Server Configuration options
   devServer: {
-    contentBase: "src/public", // Relative directory for base of server
+    contentBase: __dirname, // Relative directory for base of server
     hot: true, // Live-reload
     inline: true,
     port: 3000, // Port Number
@@ -22,15 +23,19 @@ const config = {
   devtool: "eval",
   output: {
     path: path.resolve(__dirname, "build"), // Path of output file
-    filename: "app.js",
+    filename: "timeline-frontend/build/app.js",
   },
   plugins: [
     // Enables Hot Modules Replacement
     new webpack.HotModuleReplacementPlugin(),
     // Moves files
-    new TransferWebpackPlugin([
-      { from: "public" },
-    ], path.resolve(__dirname, "src")),
+    new CopyWebpackPlugin([
+      { from: "main.css", to: "timeline-frontend/main.css" },
+    ]),
+    new Dotenv({
+      path: ".env",
+      safe: false,
+    }),
   ],
   resolve: {
     extensions: [".js", ".jsx"],

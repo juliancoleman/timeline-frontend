@@ -1,6 +1,5 @@
 const webpack = require("webpack");
 const path = require("path");
-const TransferWebpackPlugin = require("transfer-webpack-plugin");
 
 const config = {
   entry: {
@@ -16,20 +15,15 @@ const config = {
     filename: "app.js", // Name of output file
   },
   plugins: [
+    // TODO: why doesn't this work...
     // Define production build to allow React to strip out unnecessary checks
-    new webpack.DefinePlugin({
-      "process.env": {
-        "NODE_ENV": JSON.stringify("production"),
-      },
-    }),
+    // new webpack.DefinePlugin({
+    //   "process.env.NODE_ENV": JSON.stringify("production"),
+    // }),
     // Minify the bundle
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: true,
     }),
-    // Transfer Files
-    new TransferWebpackPlugin([
-      { from: "public" },
-    ], path.resolve(__dirname, "src")),
   ],
   resolve: {
     extensions: [".js", ".jsx"],
