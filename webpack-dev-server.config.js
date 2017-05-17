@@ -13,7 +13,7 @@ const config = {
   },
   // Server Configuration options
   devServer: {
-    contentBase: "src/public", // Relative directory for base of server
+    contentBase: __dirname, // Relative directory for base of server
     hot: true, // Live-reload
     inline: true,
     port: 3000, // Port Number
@@ -22,15 +22,11 @@ const config = {
   devtool: "eval",
   output: {
     path: path.resolve(__dirname, "build"), // Path of output file
-    filename: "app.js",
+    filename: "build/app.js",
   },
   plugins: [
     // Enables Hot Modules Replacement
     new webpack.HotModuleReplacementPlugin(),
-    // Moves files
-    new TransferWebpackPlugin([
-      { from: "public" },
-    ], path.resolve(__dirname, "src")),
   ],
   resolve: {
     extensions: [".js", ".jsx"],
