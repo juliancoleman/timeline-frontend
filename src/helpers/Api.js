@@ -11,7 +11,6 @@ const getHeaders = () => {
   };
 };
 const Api = {
-
   authenticate(email_address, password) { // eslint-disable-line
     return fetch(`${uri}/sessions`, {
       method: "POST",
