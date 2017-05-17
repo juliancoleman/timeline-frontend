@@ -47,7 +47,7 @@ export default class Main extends React.Component {
       <div style={{ height: "100vh" }}>
         <AppBar
           title="Summerpalooza"
-          titleStyle={{ fontSize: 22 }}
+          titleStyle={{ fontSize: 20 }}
           onLeftIconButtonTouchTap={this.handleDrawerToggle}
           showMenuIconButton={AuthService.validateToken()}
         />
