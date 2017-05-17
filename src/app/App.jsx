@@ -21,6 +21,10 @@ const muiTheme = getMuiTheme({
   palette: {
     primary1Color: teal500,
   },
+  appBar: {
+    height: 54,
+    titleFontWeight: 400,
+  },
 });
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
