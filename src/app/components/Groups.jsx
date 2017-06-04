@@ -35,7 +35,7 @@ export default class Bus extends React.Component {
 
         throw new Error("Unable to retrieve camps");
       })
-      .then(camps => this.setState({ camps }));
+      .then(camps => this.setState({ camps }, () => console.info(camps)));
   }
 
   render() {
@@ -69,7 +69,7 @@ export default class Bus extends React.Component {
                 <FlatButton label="view" onTouchTap={() => this.props.history.push(`/group/${camp.id}`)} />
               </CardActions>
             </Card>
-          )
+          );
         })}
       </div>
     );
