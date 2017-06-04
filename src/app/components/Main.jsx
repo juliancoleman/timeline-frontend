@@ -6,12 +6,10 @@ import {
   AppBar,
   Divider,
   Drawer,
-  FloatingActionButton,
   MenuItem,
   Subheader,
 } from "material-ui";
 
-import Fingerprint from "material-ui/svg-icons/action/fingerprint";
 import Home from "material-ui/svg-icons/action/home";
 import Group from "material-ui/svg-icons/social/group";
 import Today from "material-ui/svg-icons/action/today";
@@ -69,13 +67,6 @@ export default class Main extends React.Component {
               primaryText="Small Groups"
               onTouchTap={this.handleDrawerClose}
               leftIcon={<Group />}
-            />
-          </NavLink>
-          <NavLink to="/itineraries" activeClassName="active">
-            <MenuItem
-              primaryText="Itineraries"
-              onTouchTap={this.handleDrawerClose}
-              leftIcon={<Today />}
             />
           </NavLink>
           <NavLink exact to="/login" activeClassName="active" onTouchTap={() => AuthService.logout()}>

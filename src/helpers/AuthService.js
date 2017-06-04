@@ -5,7 +5,7 @@ const AuthService = {
     localStorage.setItem("user", JSON.stringify(user));
   },
   getUser() {
-    return localStorage.getItem("user");
+    return JSON.parse(localStorage.getItem("user"));
   },
   removeUser() {
     localStorage.removeItem("user");

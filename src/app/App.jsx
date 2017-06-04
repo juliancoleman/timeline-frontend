@@ -53,8 +53,6 @@ const App = () => (
           <Route path="/login" component={Login} />
           <PrivateRoute path="/groups" component={Groups} />
           <PrivateRoute path="/group/:groupId" component={Group} />
-          <PrivateRoute path="/itineraries" component={NotFound} />
-          <PrivateRoute path="/itinerary/:itineraryId" component={NotFound} />
           <PrivateRoute path="/parentguide" component={ParentGuide} />
           <PrivateRoute path="/help" component={Help} />
           <PrivateRoute path="/about" component={About} />
