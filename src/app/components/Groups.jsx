@@ -35,7 +35,7 @@ export default class Bus extends React.Component {
 
         throw new Error("Unable to retrieve camps");
       })
-      .then(camps => this.setState({ camps }, () => console.info(camps)));
+      .then(camps => this.setState({ camps }));
   }
 
   render() {
@@ -48,7 +48,7 @@ export default class Bus extends React.Component {
 
     return (
       <div className="flex-grid">
-        {camps.length > 0 && camps.map((camp) => {
+        {camps.map((camp) => {
           const mergedRoleGroups = R.merge(roleGroups, groupByRole(camp));
           const { user } = mergedRoleGroups["Small Group Leader"][0];
           const studentsLength = mergedRoleGroups.Student.length;
