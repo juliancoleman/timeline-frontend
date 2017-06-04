@@ -1,6 +1,5 @@
 import React from "react";
 import R from "ramda";
-import { Link } from "react-router-dom";
 
 import {
   Card,
@@ -49,7 +48,7 @@ export default class Bus extends React.Component {
 
     return (
       <div className="flex-grid">
-        {camps.map((camp) => {
+        {camps.length > 0 && camps.map((camp) => {
           const mergedRoleGroups = R.merge(roleGroups, groupByRole(camp));
           const { user } = mergedRoleGroups["Small Group Leader"][0];
           const studentsLength = mergedRoleGroups.Student.length;
