@@ -11,6 +11,7 @@
     "document": true,
     "localStorage": true,
     "fetch": true,
-    "Headers": true
+    "Headers": true,
+    "window": true
   }
 }

@@ -12,7 +12,6 @@ import {
 
 import Home from "material-ui/svg-icons/action/home";
 import Group from "material-ui/svg-icons/social/group";
-import Today from "material-ui/svg-icons/action/today";
 import Feedback from "material-ui/svg-icons/action/feedback";
 import WC from "material-ui/svg-icons/notification/wc";
 import Info from "material-ui/svg-icons/action/info";
@@ -43,12 +42,12 @@ export default class Main extends React.Component {
   render() {
     return (
       <div style={{ height: "100vh" }}>
-        <AppBar
+        {window.location.hash !== "#/quagga" && <AppBar
           title="Summerpalooza"
           titleStyle={{ fontSize: 20 }}
           onLeftIconButtonTouchTap={this.handleDrawerToggle}
           showMenuIconButton={AuthService.validateToken()}
-        />
+        />}
 
         <Drawer
           open={this.state.drawerOpen}

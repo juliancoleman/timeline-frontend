@@ -18,8 +18,8 @@ export default class QuaggaView extends React.Component {
         type: "LiveStream",
         target: document.querySelector("#quagga"),
         constraints: {
-          width: 400,
-          height: 560,
+          width: window.innerWidth,
+          height: window.innerHeight,
         },
       },
       decoder: {
