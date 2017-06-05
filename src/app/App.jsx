@@ -10,6 +10,7 @@ import Login from "./components/Login";
 import Home from "./components/Home";
 import Group from "./components/Group";
 import Groups from "./components/Groups";
+import Person from "./components/Person";
 import ParentGuide from "./components/ParentGuide";
 import Help from "./components/Help";
 import About from "./components/About";
@@ -53,6 +54,7 @@ const App = () => (
           <Route path="/login" component={Login} />
           <PrivateRoute path="/groups" component={Groups} />
           <PrivateRoute path="/group/:groupId" component={Group} />
+          <PrivateRoute path="/person/:userId" component={Person} />
           <PrivateRoute path="/parentguide" component={ParentGuide} />
           <PrivateRoute path="/help" component={Help} />
           <PrivateRoute path="/about" component={About} />

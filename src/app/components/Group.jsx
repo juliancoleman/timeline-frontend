@@ -49,14 +49,21 @@ export default class Group extends React.Component {
         <Subheader>Group Leader</Subheader>
         <List style={{ background: "#fff" }}>
           {smallGroupLeaders.map(({ user }) => (
-            <ListItem key={user.id} primaryText={`${user.firstName} ${user.lastName}`} />
+            <ListItem
+              key={user.id}
+              primaryText={`${user.firstName} ${user.lastName}`}
+            />
           ))}
         </List>
 
         <Subheader>Students</Subheader>
         <List style={{ background: "#fff" }}>
           {students.map(({ user }) => (
-            <ListItem key={user.id} primaryText={`${user.firstName} ${user.lastName}`} />
+            <ListItem
+              key={user.id}
+              primaryText={`${user.firstName} ${user.lastName}`}
+              onTouchTap={() => this.props.history.push(`/person/${user.id}`)}
+            />
           ))}
         </List>
       </div>
