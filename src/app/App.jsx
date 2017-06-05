@@ -12,6 +12,7 @@ import Group from "./components/Group";
 import Groups from "./components/Groups";
 import Person from "./components/Person";
 import Itinerary from "./components/Itinerary";
+import Quagga from "./components/Quagga";
 import ParentGuide from "./components/ParentGuide";
 import Help from "./components/Help";
 import About from "./components/About";
@@ -57,6 +58,7 @@ const App = () => (
           <PrivateRoute path="/group/:groupId" component={Group} />
           <PrivateRoute path="/person/:userId" component={Person} />
           <PrivateRoute path="/itinerary/:itineraryId" component={Itinerary} />
+          <PrivateRoute path="/quagga" component={Quagga} />
           <PrivateRoute path="/parentguide" component={ParentGuide} />
           <PrivateRoute path="/help" component={Help} />
           <PrivateRoute path="/about" component={About} />
