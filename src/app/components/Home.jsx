@@ -21,7 +21,10 @@ const Home = () => (
       </CardText>
     </Card>
 
-    <FloatingActionButton style={{ position: "fixed", bottom: 24, right: 24 }}>
+    <FloatingActionButton
+      style={{ position: "fixed", bottom: 24, right: 24 }}
+      onTouchTap={() => this.props.history.push("/quagga")}
+    >
       <Fingerprint />
     </FloatingActionButton>
   </div>
