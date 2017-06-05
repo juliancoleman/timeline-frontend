@@ -61,7 +61,11 @@ export default class Bus extends React.Component {
                 <List>
                   {!camp.itineraries.length && <ListItem primaryText="No itineraries" />}
                   {camp.itineraries.map(itinerary => (
-                    <ListItem key={itinerary.id} primaryText={itinerary.location} />
+                    <ListItem
+                      key={itinerary.id}
+                      primaryText={itinerary.location}
+                      onTouchTap={() => this.props.history.push(`/itinerary/${itinerary.id}`)}
+                    />
                   ))}
                 </List>
               </CardText>

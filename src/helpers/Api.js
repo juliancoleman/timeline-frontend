@@ -45,6 +45,12 @@ const Api = {
   },
 
   // itineraries
+  getItinerary(itineraryId) {
+    return fetch(`${uri}/itineraries/${itineraryId}`, {
+      method: "GET",
+      headers: getHeaders(),
+    });
+  },
   getitineraries() {
     return fetch(`${uri}/itineraries`, {
       method: "GET",
