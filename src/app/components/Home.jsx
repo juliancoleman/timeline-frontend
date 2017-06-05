@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import {
   Card,
@@ -23,7 +24,7 @@ const Home = () => (
 
     <FloatingActionButton
       style={{ position: "fixed", bottom: 24, right: 24 }}
-      onTouchTap={() => this.props.history.push("/quagga")}
+      onTouchTap={<Link to="/quagga" />}
     >
       <Fingerprint />
     </FloatingActionButton>
