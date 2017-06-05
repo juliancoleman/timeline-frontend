@@ -22,12 +22,11 @@ const Home = () => (
       </CardText>
     </Card>
 
-    <FloatingActionButton
-      style={{ position: "fixed", bottom: 24, right: 24 }}
-      onTouchTap={<Link to="/quagga" />}
-    >
-      <Fingerprint />
-    </FloatingActionButton>
+    <Link to="/quagga">
+      <FloatingActionButton style={{ position: "fixed", bottom: 24, right: 24 }}>
+        <Fingerprint />
+      </FloatingActionButton>
+    </Link>
   </div>
 );
 
