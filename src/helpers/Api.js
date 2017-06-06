@@ -29,6 +29,12 @@ const Api = {
       headers: getHeaders(),
     });
   },
+  getUserByBarcode(barcodeNumber) {
+    return fetch(`${uri}/users/barcode/${barcodeNumber}`, {
+      method: "GET",
+      headers: getHeaders(),
+    });
+  },
 
   // camps
   getUserCamps(userId, enrolled = true) {
@@ -55,6 +61,15 @@ const Api = {
     return fetch(`${uri}/itineraries`, {
       method: "GET",
       headers: getHeaders(),
+    });
+  },
+
+  // check-ins
+  checkInStudent(itineraryId, barcode_number) { // eslint-disable-line
+    return fetch(`${uri}/itineraries/${itineraryId}/checkin`, {
+      method: "POST",
+      headers: getHeaders(),
+      body: JSON.stringify({ barcode_number }),
     });
   },
 };
