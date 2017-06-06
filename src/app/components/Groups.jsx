@@ -50,7 +50,7 @@ export default class Bus extends React.Component {
       <div className="flex-grid">
         {camps.map((camp) => {
           const mergedRoleGroups = R.merge(roleGroups, groupByRole(camp));
-          const { user } = mergedRoleGroups["Small Group Leader"][0];
+          const { user } = R.pathOr(["Small Group Leader", 0], {}, mergedRoleGroups);
           const studentsLength = mergedRoleGroups.Student.length;
           const leaderName = R.join(" ", [user.firstName, user.lastName]);
 
