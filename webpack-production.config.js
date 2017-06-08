@@ -4,7 +4,6 @@ const path = require("path");
 const config = {
   entry: {
     main: [
-      "webrtc-adapter",
       "./src/app/index.jsx",
     ],
   },
