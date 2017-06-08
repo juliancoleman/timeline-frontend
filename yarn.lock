@@ -3715,7 +3715,7 @@ safe-buffer@^5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.0.1.tgz#d263ca54696cd8a306b5ca6551e92de57918fbe7"
 
-sdp@^1.0.0:
+sdp@^1.0.0, sdp@^1.5.0:
   version "1.5.4"
   resolved "https://registry.yarnpkg.com/sdp/-/sdp-1.5.4.tgz#8e038f6ddb14bd765ae1f4b5216e12094511e0d0"
 
@@ -4304,6 +4304,12 @@ webrtc-adapter@^2.0.2:
   resolved "https://registry.yarnpkg.com/webrtc-adapter/-/webrtc-adapter-2.1.0.tgz#612b5bc6ce8e73c9d0660038a21f9255a867bf3e"
   dependencies:
     sdp "^1.0.0"
+
+webrtc-adapter@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/webrtc-adapter/-/webrtc-adapter-4.0.0.tgz#00212e9b4bf85318fb6c82e6a6060a8947573300"
+  dependencies:
+    sdp "^1.5.0"
 
 websocket-driver@>=0.5.1:
   version "0.6.5"

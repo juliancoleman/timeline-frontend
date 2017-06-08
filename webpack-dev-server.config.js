@@ -8,6 +8,7 @@ const config = {
   entry: {
     main: [
       // only- means to only hot reload for successful updates
+      "webrtc-adapter",
       "webpack/hot/only-dev-server",
       "./src/app/index.jsx",
     ],
