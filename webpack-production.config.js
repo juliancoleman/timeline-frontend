@@ -4,6 +4,8 @@ const path = require("path");
 const config = {
   entry: {
     main: [
+      "webrtc-adapter",
+      "babel-polyfill",
       "./src/app/index.jsx",
     ],
   },
