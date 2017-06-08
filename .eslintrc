@@ -12,6 +12,7 @@
     "localStorage": true,
     "fetch": true,
     "Headers": true,
-    "window": true
+    "window": true,
+    "navigator": true
   }
 }
