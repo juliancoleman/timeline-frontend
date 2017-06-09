@@ -5,6 +5,7 @@ const config = {
   entry: {
     main: [
       "webrtc-adapter",
+      "whatwg-fetch",
       "babel-polyfill",
       "./src/app/index.jsx",
     ],

@@ -9,6 +9,7 @@ const config = {
     main: [
       // only- means to only hot reload for successful updates
       "webrtc-adapter",
+      "whatwg-fetch",
       "babel-polyfill",
       "webpack/hot/only-dev-server",
       "./src/app/index.jsx",
