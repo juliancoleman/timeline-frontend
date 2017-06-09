@@ -38,7 +38,7 @@ export default class Group extends React.Component {
   }
 
   render() {
-    const { camp, roleGroups } = this.state;
+    const { roleGroups } = this.state;
     const smallGroupLeaders = R.prop("Small Group Leader", roleGroups);
     const students = R.prop("Student", roleGroups);
 
