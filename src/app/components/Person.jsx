@@ -12,6 +12,7 @@ const visibleProps = {
   "emergencyContactName": "Emergency contact name",
   "emergencyContacNumber": "Emergency contact number",
   "emergencyContactRelationship": "Emergency contact relationship",
+  "allergies": "Allergies",
 };
 
 export default class Person extends React.Component {

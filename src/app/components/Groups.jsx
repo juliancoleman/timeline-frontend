@@ -27,6 +27,7 @@ export default class Bus extends React.Component {
 
   componentDidMount() {
     const user = AuthService.getUser();
+
     Api.getUserCamps(user.id)
       .then((response) => {
         if (response.ok) {
