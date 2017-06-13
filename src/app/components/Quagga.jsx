@@ -21,38 +21,17 @@ export default class QuaggaView extends React.Component {
   componentDidMount() {
     const { history } = this.props;
 
-    const resultCollector = Quagga.ResultCollector.create({
-      capture: true,
-      capacity: 1,
-      filter({ code }) {
-        Quagga.stop();
-        return history.push(`/checkin/${code}`);
-      },
-    });
-
     Quagga.init({
       inputStream: {
-        name: "Live",
-        type: "LiveStream",
-        target: document.querySelector("#quagga"),
-        constraints: {
-          width: window.innerWidth,
-          height: window.innerHeight,
-        },
-        area: { // defines rectangle of the detection/localization area
-          top: "0%",    // top offset
-          right: "0%",  // right offset
-          left: "0%",   // left offset
-          bottom: "0%", // bottom offset
-        },
+        size: 800,
+        singleChannel: false,
+      },
+      locator: {
+        patchSize: "medium",
+        halfSample: true,
       },
       decoder: {
         readers: ["code_39_reader"],
-      },
-      debug: {
-        showBoundingBox: true,
-        drawScanLine: true,
-        showPattern: true,
       },
     }, (err) => {
       if (err) {
@@ -63,10 +42,12 @@ export default class QuaggaView extends React.Component {
       Quagga.start();
     });
 
-    Quagga.registerResultCollector(resultCollector);
+    Quagga.onDetected(({ codeResult }) => {
+      const { code } = codeResult;
 
-    Quagga.onDetected((result) => {
-      console.info(result);
+      Quagga.stop();
+
+      return history.push(`/checkin/${code}`);
     });
   }
 
@@ -79,7 +60,6 @@ export default class QuaggaView extends React.Component {
         >
           <NavigationBack color={white} />
         </IconButton>
-        <div id="quagga" />
       </div>
     );
   }
