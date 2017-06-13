@@ -46,7 +46,6 @@ export default class Home extends React.Component {
   }
 
   handleChange = (event) => {
-    console.log(event.target);
     if (event.target.files && event.target.files.length) {
       this.decode(URL.createObjectURL(event.target.files[0]));
     }
@@ -73,10 +72,6 @@ export default class Home extends React.Component {
         </Card>
 
         <input type="file" accept="image/*" capture="camera" onChange={this.handleChange} />
-
-        <FloatingActionButton style={{ position: "fixed", bottom: 24, right: 24 }}>
-          <Fingerprint />
-        </FloatingActionButton>
       </div>
     );
   }
