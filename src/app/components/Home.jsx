@@ -18,12 +18,12 @@ export default class Home extends React.Component {
     this.state = {
       config: {
         inputStream: {
-          size: 800,
+          size: 1080,
           singleChannel: false,
         },
         locator: {
           patchSize: "medium",
-          halfSample: true,
+          halfSample: false,
         },
         decoder: {
           readers: ["code_39_reader"],
@@ -45,8 +45,9 @@ export default class Home extends React.Component {
     });
   }
 
-  handleChange = ({ target }) => {
-    if (target.files && target.files.length) {
+  handleChange = (event) => {
+    console.log(event.target);
+    if (event.target.files && event.target.files.length) {
       this.decode(URL.createObjectURL(target.files[0]));
     }
   }
@@ -55,11 +56,7 @@ export default class Home extends React.Component {
     const { config } = this.state;
     const mergedConfig = R.merge(config, { src });
 
-    Quagga.decodeSingle(mergedConfig, ({ codeResult }) => {
-      const { code } = codeResult;
-
-      this.props.history.push(`/checkin/${code}`)
-    });
+    Quagga.decodeSingle(mergedConfig);
   }
 
   render() {
