@@ -55,7 +55,11 @@ export default class Home extends React.Component {
     const { config } = this.state;
     const mergedConfig = R.merge(config, { src });
 
-    Quagga.decodeSingle(mergedConfig);
+    Quagga.decodeSingle(mergedConfig, ({ codeResult }) => {
+      const { code } = codeResult;
+
+      this.props.history.push(`/checkin/${code}`)
+    });
   }
 
   render() {
