@@ -1,5 +1,4 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
 
 import {
   Card,
@@ -38,9 +37,15 @@ export default class Login extends React.Component {
     const value = target.type === "checkbox" ? target.checked : target.value;
     const name = target.name;
 
-    this.setState({
-      [name]: value.trim().toLowerCase(),
-    });
+    if (name === "email_address") {
+      this.setState({
+        [name]: value.trim().replace(),
+      });
+    } else {
+      this.setState({
+        [name]: value,
+      });
+    }
   }
 
   handleSubmit() {
