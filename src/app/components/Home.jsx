@@ -48,7 +48,7 @@ export default class Home extends React.Component {
   handleChange = (event) => {
     console.log(event.target);
     if (event.target.files && event.target.files.length) {
-      this.decode(URL.createObjectURL(target.files[0]));
+      this.decode(URL.createObjectURL(event.target.files[0]));
     }
   }
 
