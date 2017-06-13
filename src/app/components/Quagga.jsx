@@ -20,8 +20,7 @@ export default class QuaggaView extends React.Component {
 
   componentDidMount() {
     const { history } = this.props;
-
-    Quagga.init({
+    const config = {
       inputStream: {
         size: 800,
         singleChannel: false,
@@ -33,19 +32,10 @@ export default class QuaggaView extends React.Component {
       decoder: {
         readers: ["code_39_reader"],
       },
-    }, (err) => {
-      if (err) {
-        throw new Error(err);
-      }
-
-      console.info("Quagga initialized. Ready to start!");
-      Quagga.start();
-    });
+    };
 
     Quagga.onDetected(({ codeResult }) => {
       const { code } = codeResult;
-
-      Quagga.stop();
 
       return history.push(`/checkin/${code}`);
     });
